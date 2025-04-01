@@ -1,3 +1,4 @@
+// src/app/posts/page.tsx
 import Link from "next/link";
 import { getAllPosts } from "@/app/lib/posts";
 
