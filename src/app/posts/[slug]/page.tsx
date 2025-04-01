@@ -2,11 +2,10 @@ import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/app/lib/posts";
 
 type BlogPostProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function BlogPost({ params }: BlogPostProps) {
-  // ✅ Ensure params is awaited before use
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
@@ -20,3 +19,4 @@ export default async function BlogPost({ params }: BlogPostProps) {
     </div>
   );
 }
+
